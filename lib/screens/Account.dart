@@ -11,7 +11,7 @@ class Account extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
              SizedBox(
-                height: 300,
+                height: 206,
                 width: double.infinity,
                 child: Image.asset("images/dell.jpg")),
             const CircleAvatar(
