@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/CategoryProvider.dart';
+import '../Providers/CategoryProvider.dart';
 
 class Category extends StatefulWidget {
   const Category ({Key? key}) : super(key: key);

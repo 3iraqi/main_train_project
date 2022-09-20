@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import '../model/Catogry_Model.dart';
+import '../Models/Catogry_Model.dart';
 
 
 class CategoryProvider with ChangeNotifier{

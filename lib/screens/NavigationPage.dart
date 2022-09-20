@@ -26,7 +26,12 @@ class _NavigationPageState extends State<NavigationPage> {
       )),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white60,
         showUnselectedLabels: false,
+        iconSize: 40,
+        backgroundColor: Colors.blue,
+        elevation: 0,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
@@ -35,9 +40,25 @@ class _NavigationPageState extends State<NavigationPage> {
         },
         items: const
         [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'My Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'My Category'),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'My Account'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                  Icons.home
+              ),
+              label: 'My Home'
+          ),
+          BottomNavigationBarItem(
+              backgroundColor: Colors.red,
+              icon: Icon(
+                  Icons.favorite
+              ),
+              label: 'My Category'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                  Icons.account_circle
+              ),
+              label: 'My Account'
+          ),
         ],
       ),
     );

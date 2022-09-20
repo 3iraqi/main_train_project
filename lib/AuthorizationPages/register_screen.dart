@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../screens/NavigationPage.dart';
 
-import '../../providers/register_provider.dart';
+import '../Providers/register_provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key? key}) : super(key: key);
@@ -31,9 +31,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Form(
               key: formKey,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Image(
+                      // alignment: Alignment.centerLeft,
+                      height: 100,
+                      width: 100,
+                      image: NetworkImage("https://i.pinimg.com/564x/b0/c9/2f/b0c92f2bbbc1dfaa1f077c8bd42804ea.jpg")
+                  ),
+                  const SizedBox(height: 20,),
+                   Text(
                     'REGISTER',
                     style: Theme.of(context).textTheme.headline4!.copyWith(
                           color: Colors.black,
@@ -58,11 +65,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         if (value!.isEmpty) {
                           return 'please enter your name address';
                         }
+                        return null;
                       },
                       decoration: const InputDecoration(
                         labelText: 'Name',
                         prefixIcon: Icon(Icons.person),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(30)) ,),
                       )),
                   const SizedBox(
                     height: 20.0,
@@ -77,11 +85,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         if (value!.isEmpty) {
                           return 'please enter your email address';
                         }
+                        return null;
                       },
                       decoration: const InputDecoration(
                         labelText: 'Email',
                         prefixIcon: Icon(Icons.email_outlined),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(30)) ,),
                       )),
                   const SizedBox(
                     height: 20.0,
@@ -100,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: const InputDecoration(
                         labelText: 'password',
                         prefixIcon: Icon(Icons.email_outlined),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(30)) ,),
                       )),
                   const SizedBox(
                     height: 20.0,
@@ -119,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: const InputDecoration(
                         labelText: 'phone',
                         prefixIcon: Icon(Icons.phone_android),
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(borderRadius:BorderRadius.all(Radius.circular(30)) ,),
                       )),
                   const SizedBox(
                     height: 30.0,
@@ -149,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               } else {
                                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const NavigationPage()));
                               }
-                              print("value " + value.toString());
+
                             });
                           }
                         },
@@ -158,7 +167,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           height: 50.0,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                            borderRadius: BorderRadius.circular(30.0),
                             color: Colors.blue,
                           ),
                           child: const Text(

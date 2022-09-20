@@ -1,35 +1,37 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import '../model/register_model.dart';
 
-class RegisterProvider with ChangeNotifier{
-  RegisterModel?registerModel;
+
+import '../Models/Login_Model.dart';
+
+class LoginProvider with ChangeNotifier{
+  LoginModel? loginModel;
   Map<String,dynamic>? data;
-  Future<dynamic>register({
-    String? name,
+  Future<dynamic>login({
+
     String?email,
     String?password,
-    String?phone,
+
   })async{
-        var dio=Dio();
-     dio.options.headers={
+    var dio=Dio();
+    dio.options.headers={
       "lang":"ar",
       "Content-Type":"application/json"
-     };
-     data={
-      "name":name,
+    };
+    data={
+
       "email":email,
       "password":password,
-      "phone":phone,
-     };
-     notifyListeners();
-     final response=await dio.post("https://student.valuxapps.com/api/register",
-     data: data,
-     ); 
-     print("data register "+response.data.toString());
-    registerModel=RegisterModel.fromJson(response.data);
 
-  }  
+    };
+    notifyListeners();
+    final response=await dio.post("https://student.valuxapps.com/api/login",
+      data: data,
+    );
+    // print("data register "+response.data.toString());
+    loginModel=LoginModel.fromJson(response.data);
+
+  }
 }
 
 
@@ -51,15 +53,15 @@ class RegisterProvider with ChangeNotifier{
 
 
 // class RegisterProvider with ChangeNotifier{
-//  RegisterModel? registerModel; 
-//   String? token; 
+//  RegisterModel? registerModel;
+//   String? token;
 //     Map<String,dynamic>? data;
 //   Future<dynamic>register({
 //     String? name,
 //     String? phone,
 //     String? email,
-//     String? password,  
-     
+//     String? password,
+
 //   })async{
 //     var dio=Dio();
 //     dio.options.headers={
@@ -75,9 +77,9 @@ class RegisterProvider with ChangeNotifier{
 //       "password":password
 //     };
 //     notifyListeners();
-   
 
-    
+
+
 //    final response= await dio.post("https://student.valuxapps.com/api/register",data: data);
 //    print("res"+response.data["message"]);
 //     registerModel=RegisterModel.fromJson(response.data);

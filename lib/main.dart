@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'auth/Login.dart';
-import './providers/CategoryProvider.dart';
-import './providers/home_provider.dart';
-import './providers/register_provider.dart';
+import './AuthorizationPages/Login.dart';
+import './Providers/CategoryProvider.dart';
+import './Providers/home_provider.dart';
+import './Providers/register_provider.dart';
 
 
 void main() => runApp(const MyApp());

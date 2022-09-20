@@ -11,13 +11,16 @@ class Account extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
              SizedBox(
-                height: 206,
+                height: 250,
                 width: double.infinity,
-                child: Image.asset("images/dell.jpg")),
+                child: Image(fit: BoxFit.cover,
+                    image: NetworkImage(
+                        "https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")
+                )),
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage(
-                  "images/1.jpg"),
+              backgroundImage: NetworkImage(
+                  "https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-1/304836949_5516952685065551_1674484585739549942_n.jpg?stp=dst-jpg_p160x160&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=Z_BVNk2Ch7cAX-YSjoD&_nc_ht=scontent-hbe1-1.xx&oh=00_AT8cAo-_iOoWTE7YrgANcxV6XeYLz9HX6vD3wVG5g0IGEQ&oe=632D2743"),
               backgroundColor: Colors.white,
             )
           ],
@@ -39,7 +42,10 @@ class Account extends StatelessWidget {
         const Center(
             child: Text(
               "Neque porro squamous est qui do-lorem\nipsum quia dolor sit amet, consectetur, adipisci",
-              style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.pink),
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent),
             ))
       ]),
     );
