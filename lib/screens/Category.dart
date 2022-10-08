@@ -1,14 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Providers/CategoryProvider.dart';
 
 class Category extends StatefulWidget {
   const Category ({Key? key}) : super(key: key);
-
-
- 
 
   @override
   State<Category> createState() => _CategoryState();
@@ -26,14 +22,19 @@ class _CategoryState extends State<Category> {
 
   builder: (context,  categoryProv, child) {
   return ListView.builder(
+
       itemCount: categoryProv.category?.data!.data!.length,
         padding: const EdgeInsets.all(8),
       
         itemBuilder: (BuildContext context, int index) {
 
           return  Container(
+            decoration:const BoxDecoration(
+              color: Colors.white,
+
+            ),
             // height: 50,
-            color: Colors.white,
+
             child: SingleChildScrollView(
               child: Column(
                 children: [

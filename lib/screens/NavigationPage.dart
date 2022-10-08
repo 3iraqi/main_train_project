@@ -12,19 +12,22 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   var currentIndex = 0;
-  List<Widget> screens = [HoomeScreen(), Category(), Account()];
+  List<String>barTitle=["Product","Category","Profile"];
+  List<Widget> screens = [ const HoomeScreen(), const Category(),const Account()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         elevation: 0,
-        title: const Text('First App'),
+        title:  Text(barTitle[currentIndex]),
       ),
       drawer: const Drawer(
           child: Center(
         child: Text('Menu'),
       )),
       body: screens[currentIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white60,

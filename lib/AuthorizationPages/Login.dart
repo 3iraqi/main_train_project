@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import './register_screen.dart';
-import 'package:train_projects/screens/NavigationPage.dart';
+import '../screens/NavigationPage.dart';
 
-// import 'Register.dart';
+
 
 
 class Login extends StatelessWidget {
-var formKey = GlobalKey<FormState>();
 
+var formKey = GlobalKey<FormState>();
   Login({Key? key}) : super(key: key);
 
 var passwordController=TextEditingController();
 var emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) => Scaffold(
 
@@ -26,12 +27,15 @@ var emailController = TextEditingController();
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: 40,
-                  vertical: 40),
+                  vertical: 40,
+              ),
+
               child: Form(
                 key: formKey,
                child: Column(
 
                  children: [
+
                    const Image(height: 150,
                        width: 150,
                        image: NetworkImage("https://i.pinimg.com/564x/b0/c9/2f/b0c92f2bbbc1dfaa1f077c8bd42804ea.jpg")
@@ -40,25 +44,28 @@ var emailController = TextEditingController();
                    const Text(
                      'Login',
                      style: TextStyle(
-                       color: Colors.black,
-
-
-                         fontSize: 50
+                       fontSize: 50
                      ),
                    ),
+
                    const SizedBox(
                      height: 20,
+                     width: 30,
                    ),
+
                    TextFormField(
                       controller: emailController ,
+
                      validator: ((value) {
                        if(value!.isEmpty){
                          return "email address must not be empty";
                        }
                        return null;
                      }
+
                      ),
                      keyboardType: TextInputType.emailAddress,
+
                      decoration: const InputDecoration(
 
                          border: OutlineInputBorder(
@@ -73,6 +80,7 @@ var emailController = TextEditingController();
                      height: 20,
                    ),
 
+
                    TextFormField(
                      controller: passwordController,
                      keyboardType: TextInputType.visiblePassword,
@@ -83,7 +91,9 @@ var emailController = TextEditingController();
                        return null;
                      },
                      decoration:  const InputDecoration(
+                       // enabledBorder: ,
                        border: OutlineInputBorder(
+
                          borderRadius:BorderRadius.all(Radius.circular(30)) ,
                        ),
                        prefixIcon: Icon(Icons.lock),
@@ -93,6 +103,7 @@ var emailController = TextEditingController();
                               ),
                    ),
                    SizedBox(height: 20,),
+
                    GestureDetector(
                      onTap: (){
                        if(formKey.currentState!.validate()){

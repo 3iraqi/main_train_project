@@ -5,7 +5,8 @@ import '../Models/product_model.dart';
 import '../Providers/home_provider.dart';
 
 class HoomeScreen extends StatefulWidget {
-  const HoomeScreen({Key? key}) : super(key: key);
+  const
+  HoomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HoomeScreen> createState() => _HomeScreenState();
